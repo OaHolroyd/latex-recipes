@@ -1,42 +1,27 @@
-# This is a verbose template for a recipe. A bare-bones example which will be
-# more useful for copying and pasting is saved in '_template.yaml'
 # ˚ ½ ⅓ ⅔ ¼ ¾
 ---
-title: Example Food
-servings: 4  # number of portions that this makes
-number:  # this one is for things like cookies which make x rather than serve y
-prepTime: 20 minutes  # times can be just minutes, or in hh:MM format
-cookTime: 1:30
-freezable: true  # true/false should not be capitalised
-notes:  # this is for a short bit of text about the recipe
+title:
+servings:
+number:
+prepTime:
+cookTime:
+freezable:
+notes:
 ingredients:
-  main:  # sections called 'main' will not be labelled. 'main' is not required
-    - 4 of something, prepped like so  # in general ingredients should be formatted as 'QUANTITY of item, PREP'
-    - 1 item, chopped
-    - A pinch of something else
-    - Olive oil
-    - Salt to taste
-  secondary section:  # sections with other names will be specified
-    - More ingredients
-    - 12 of this thing
-  dressing or something:  # change the name of the section, don't add a name
-    - Some oil probably
-    - More things
+  main:
+    -
+    -
+  dressing or whatever:
+    -
+    -
 method:
-  - Instructions for how to cook the example food go here. Each instruction can
-    be fairly long and even go over new lines, but make sure to indent properly.
-    In general, try to keep the entire file less than 80 characters wide.
-  - Steps can also be short, but I find that they look a bit funny if they're
-    too short or too long.
-  - Another step (too short).
-  - And another.
-  - Etc. etc.
+  -
+  -
+  -
+  -
 tags:
-  - vegetarian
-  - healthy
-  - example
-  - template
+  -
 source:
-  name: John Smith
-  book:  # keys should be left blank if they are not relevant
-  website: www.examplerecipes.co.uk/example_food
+  name:
+  book:
+  website:

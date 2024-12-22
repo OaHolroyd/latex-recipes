@@ -4,6 +4,7 @@
 # non-template recipe definitions (due to licensing issues)
 yaml/*
 !yaml/template.yaml
+!yaml/template-verbose.yaml
 
 # generated LaTeX
 *.tex
