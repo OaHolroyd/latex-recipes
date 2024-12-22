@@ -1,0 +1,35 @@
+\documentclass{book}
+
+{{"\\usepackage{%s}" % style}}
+
+\begin{document}
+\rcpopen
+\rcptitle{{ "{" }}{{ title }}{{ "}" }}
+
+{% if freezable -%}{{"\\rcpfreezable\n"}}{%- endif %}{% if servings -%}{{"\\rcpservings{%s}\n" % servings}}{%- endif %}{% if number -%}{{"\\rcpmakes{%s}\n" % number}}{%- endif %}{% if prepTime -%}{{"\\rcpprep{%s}\n" % prepTime}}{%- endif %}{% if cookTime -%}{{"\\rcpcook{%s}\n" % cookTime}}{%- endif %}
+
+{% if notes -%}{{"\\rcpnotes{%s}" % notes}}{%- endif %}
+
+\begin{ingredients}
+{% for item in ingredients.main %}
+  {{"  \item %s" % item}}
+{% endfor -%}
+
+{% for key, value in ingredients.items() -%}
+  {% if key != 'main' -%}
+    {{"  \sect %s" % key}}
+    {% for item in value -%}
+      {{"  \item %s" % item}}
+    {% endfor %}
+  {%- endif %}
+{% endfor -%}
+\end{ingredients}
+
+\begin{method}
+{% for item in method %}
+  {{"  \item %s" % item}}
+{% endfor -%}
+\end{method}
+
+\rcpclose
+\end{document}
