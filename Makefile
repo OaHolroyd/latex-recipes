@@ -5,6 +5,7 @@ STY_FILE=rcp-phone.sty
 YAML_DIR=./yaml
 
 
+
 # TeX and PDF generation tools
 YAML_TO_TEX=python3 ./src/yaml_to_tex.py
 LATEXMK=latexmk -pdf -ps- -dvi- -xdv- -interaction=nonstopmode -halt-on-error
@@ -67,4 +68,3 @@ $(PDF_DIR):
 # create intermediate directory for TeX-related files
 $(TEX_DIR):
 	mkdir -p $(TEX_DIR)
-# 	cp $(STY_DIR)/$(STY_FILE) $(TEX_DIR)/$(STY_FILE)

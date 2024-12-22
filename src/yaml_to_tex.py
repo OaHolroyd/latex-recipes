@@ -1,12 +1,12 @@
 """
-Takes a YAML definition and generates a TeX file
+Takes a YAML definition and generates a LaTeX file
 """
 from sys import stderr
 import argparse
 from pathlib import Path
+
 import yaml
 from jinja2 import Environment, FileSystemLoader
-
 from enchant.checker import SpellChecker
 from enchant import DictWithPWL
 
