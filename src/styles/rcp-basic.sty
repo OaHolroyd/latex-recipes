@@ -1,23 +1,15 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{rcp-basic}[2020/09/06 Display recipe layout]
+\ProvidesPackage{rcp-basic}[2020/09/06 Basic recipe layout]
 
-\RequirePackage{mfirstuc} % to allow first letter capitalising
 \RequirePackage{enumitem} % to allow no bullet itemization
-\RequirePackage{longtable} %dependency of longtabu
-\RequirePackage{tabu} % to allow lines after rows
-\RequirePackage{multicol} % to allow multipl columns
-\RequirePackage{xparse} % to allow fancy things like the single multicol
-\RequirePackage{bbding} % for snowflake
-\RequirePackage{graphicx} % to include images
+\RequirePackage{multicol} % to allow multiple columns
 \RequirePackage{url} % to include urls
-\RequirePackage{subfiles} % to allow each recipe to be in its own file
 \makeatletter
 \g@addto@macro{\UrlBreaks}{\UrlOrds}
 \makeatother
 
 \RequirePackage{gensymb} % to use the degree symbol
 \RequirePackage{xfrac} % for split level fractions
-\RequirePackage{booktabs} % for midrule
 \RequirePackage{titlecaps} % for title
 \RequirePackage{scrextend} % for better font size control
 
@@ -33,15 +25,16 @@
 \setlength{\parindent}{0pt}
 \changefontsizes{12pt}
 
+% no page numbers
 \pagenumbering{gobble}
 
 % ignore somw words in cap. titles
 \Addlcwords{are or etc and in}
 
+
 % ********
 % COMMANDS
 % ********
-
 \newcommand{\rcptitle}[1]{\par{\centering \Large \textbf{\titlecap{#1}}\par}\vspace{1em}}
 \newcommand{\rcpfreezable}{\par{\centering \textbf{Freezable}\par}}
 \newcommand{\rcpservings}[1]{\par{\centering \textbf{Serves:} #1\par}}
@@ -70,7 +63,7 @@
     \let\olditem\item
 
     \newcommand{\sectA}{\olditem \centering\normalfont\scshape}
-    \newcommand{\sect}{\olditem \centering\vskip1.5em\normalfont\scshape}
+    \newcommand{\sect}{\sectA\vskip1.5em}
     \renewcommand{\item}{\olditem \centering\hrulefill\\\vspace{-0.3em}\centering\itshape\bfseries}
 }
 {

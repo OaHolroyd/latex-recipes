@@ -1,25 +1,18 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{rcp-parallel}[2020/09/06 Basic recipe layout]
+\ProvidesPackage{rcp-parallel}[2020/09/06 Parallel recipe layout]
 
-\RequirePackage{mfirstuc} % to allow first letter capitalising
 \RequirePackage{enumitem} % to allow no bullet itemization
-\RequirePackage{longtable} %dependency of longtabu
-\RequirePackage{tabu} % to allow lines after rows
-\RequirePackage{multicol} % to allow multipl columns
-\RequirePackage{xparse} % to allow fancy things like the single multicol
-\RequirePackage{bbding} % for snowflake
-\RequirePackage{graphicx} % to include images
+\RequirePackage{multicol} % to allow multiple columns
 \RequirePackage{url} % to include urls
-\RequirePackage{subfiles} % to allow each recipe to be in its own file
 \makeatletter
 \g@addto@macro{\UrlBreaks}{\UrlOrds}
 \makeatother
 
 \RequirePackage{gensymb} % to use the degree symbol
 \RequirePackage{xfrac} % for split level fractions
-\RequirePackage{booktabs} % for midrule
 \RequirePackage{titlecaps} % for title
 \RequirePackage{scrextend} % for better font size control
+
 
 % ********
 % GEOMETRY
@@ -32,6 +25,7 @@
 \setlength{\parindent}{0pt}
 \changefontsizes{12pt}
 
+% no page numbers
 \pagenumbering{gobble}
 
 % ignore somw words in cap. titles
@@ -41,7 +35,6 @@
 % ********
 % COMMANDS
 % ********
-
 \newcommand{\rcptitle}[1]{{\huge \textsc{\titlecap{#1}}}\vspace{1em}}
 \newcommand{\rcpfreezable}{\textbf{Freezable}\\}
 \newcommand{\rcpservings}[1]{\textbf{Serves:} #1\\}
@@ -72,7 +65,7 @@
   \let\olditem\item
 
   \newcommand{\sectA}{\olditem\normalfont\scshape}
-  \newcommand{\sect}{\olditem\vskip1em\normalfont\scshape}
+  \newcommand{\sect}{\sectA\vskip1em}
   \renewcommand{\item}{\olditem\normalfont\bfseries}
 }
 {

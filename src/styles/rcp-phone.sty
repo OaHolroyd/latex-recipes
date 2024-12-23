@@ -2,7 +2,7 @@
 \ProvidesPackage{rcp-phone}[2020/09/06 Recipe layout for phones]
 
 \RequirePackage{enumitem} % to allow no bullet itemization
-\RequirePackage{multicol} % to allow multipl columns
+\RequirePackage{multicol} % to allow multiple columns
 \RequirePackage{url} % to include urls
 \makeatletter
 \g@addto@macro{\UrlBreaks}{\UrlOrds}
@@ -67,7 +67,7 @@
     \let\olditem\item
 
     \newcommand{\sectA}{\olditem\normalfont\bfseries}
-    \newcommand{\sect}{\olditem\vskip1.5em\normalfont\bfseries}
+    \newcommand{\sect}{\sectA\vskip1.5em}
     \renewcommand{\item}{\olditem \hrulefill\\\vskip-1.79em\bfseries\itshape}
 }
 {
