@@ -56,20 +56,20 @@ def flatten_content(content: dict) -> list[str]:
     if isinstance(content.get("title", None), str):
         content_list.append(content["title"])
     if isinstance(content.get("servings", None), str):
-        content_list.append(content["servings"])
+        content_list.append("Servings: " +content["servings"])
     if isinstance(content.get("number", None), str):
-        content_list.append(content["number"])
+        content_list.append("Number: " +content["number"])
     if isinstance(content.get("prepTime", None), str):
-        content_list.append(content["prepTime"])
+        content_list.append("Preparation time: " + content["prepTime"])
     if isinstance(content.get("cookTime", None), str):
-        content_list.append(content["cookTime"])
+        content_list.append("Cooking time: " +content["cookTime"])
     if isinstance(content.get("freezable", None), str):
         content_list.append(content["freezable"])
     if isinstance(content.get("notes", None), str):
         content_list.append(content["notes"])
     for key, val in content.get("ingredients", {}).items():
         for item in val:
-            content_list.append("Item:" + str(item))
+            content_list.append("Item: " + str(item))
     for step in content.get("method", []):
         content_list.append(step)
     return content_list
@@ -93,9 +93,10 @@ def get_errors_language_tool(content: list[str], words: list[str]) -> list:
 
                 # ignore matches that are spelling 'mistakes' that are in the words list
                 if match.ruleId == "MORFOLOGIK_RULE_EN_GB":
-                    bad_word = text[match.offsetInContext:match.offsetInContext+match.errorLength]
-                    if bad_word in words:
+                    bad_word = match.context[match.offsetInContext:match.offsetInContext+match.errorLength]
+                    if bad_word.lower() in words:
                         continue
+                    print(f"'{bad_word}'")
 
                 errors.append(match)
     return errors
