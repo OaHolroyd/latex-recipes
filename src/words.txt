@@ -1,5 +1,7 @@
 preptime
 cooktime
+tsp
+tbsp
 purée
 mins
 parmesan

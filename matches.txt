@@ -1,0 +1,106 @@
+0
+Offset 52, length 8, Rule ID: MORFOLOGIK_RULE_EN_GB
+Message: Possible spelling mistake found.
+Suggestion: prep Time
+...¾ --- title: Pizzas servings: number: 4 prepTime: at least 10 hours cookTime: 20 minutes...
+                                           ^^^^^^^^
+
+1
+Offset 80, length 8, Rule ID: MORFOLOGIK_RULE_EN_GB
+Message: Possible spelling mistake found.
+Suggestion: cook Time
+...: number: 4 prepTime: at least 10 hours cookTime: 20 minutes freezable: false notes: The...
+                                           ^^^^^^^^
+
+2
+Offset 148, length 4, Rule ID: COMMA_COMPOUND_SENTENCE_2
+Message: Use a comma before “and” if it connects two independent clauses (unless they are closely connected and short).
+Suggestion: , and
+...le: false notes: The sauce can be frozen and the dough will keep for a few days in t...
+                                           ^^^^
+
+3
+Offset 210, length 11, Rule ID: UPPERCASE_SENTENCE_START
+Message: This sentence does not start with an uppercase letter.
+Suggestion: Ingredients
+...ep for a few days in the        fridge. ingredients:   dough:     - 600g strong flour     -...
+                                           ^^^^^^^^^^^
+
+4
+Offset 448, length 4, Rule ID: MORFOLOGIK_RULE_EN_GB
+Message: Possible spelling mistake found.
+Suggestion: TBS; TSP; BSP; TBP
+...r     - 2 tins chopped tomatoes     - 6 tbsp tomato purée     - 2 tsp dried oregano ...
+                                           ^^^^
+
+5
+Offset 474, length 3, Rule ID: MORFOLOGIK_RULE_EN_GB
+Message: Possible spelling mistake found.
+Suggestion: TSP; cep; top; tip; tap; DSP; ISP; PSP; TCP; TS; CSP; SSP; TSA; USP; HSP; LSP; TSS; asp; esp; RSP; Twp; ASP; BSP; ESP; FSP; GSP; JSP; MSP; SP; TAP; TBP; TDP; TEP; TGP; THP; TIP; TKP; TLP; TMP; TNP; TOP; TP; TPP; TRP; TSB; TSC; TSD; TSE; TSG; TSH; TSI; TSK; TSL; TSM; TSN; TSO; TSR; TSV; TSVP; TSX; TTP; TUP; TVP; Top; VSP; WSP; ZSP; ceps; tmp; the; to; is; as; two; its; so; too; up; us; use; St; stop; ten; type; cell; map; pop; step; task; tax; test; trip; try; ask; cap; cup; gap; hip; hop; http; lap; tag; tape; tea; tie; ton; vs; GDP; MVP; NSW; ash; atop; cent; rap; spy; tin; toy; trap; ups; CSS; FDP; HP; LSU; SD; SG; SK; SL; SSR; SVP; TNA; TNT; TT; Ted; USA; USB; cop; lip; spa; tan; tips; toe; tops; toss; tow; ADP; ASA; BNP; BSA; BSD; CSA; CSI; CSU; CSX; DSM; DSO; ESA; GOP; JP; LSD; LST; MSN; NSA; NTSC; PDP; PPP; PS2; PSA; PSV; RSA; RSS; RTS; SB; SNP; SPD; TBS; TLC; TTC; TV; UDP; VIP; VP; amp; cede; dip; psi; rip; sap; ta; tab; tar; thy; tsar; tub; tug; zip; ARP; ASB; ASD; ATS; BMP; CCP; CPP; CSC; CSF; CSL; CSR; CST; DSC; DSL; DSS; DST; DTS; DUP; EPP; ESC; ESL; FP; FSA; FSU; FTSE; GBP; GNP; ICP; JSA; MCP; MMP; MPP; MSF; MST; MSc; MTS; NLP; NSF; NTSB; OSI; OSU; PCP; PNP; PSD; PSL; PSU; PTSD; RSC; SPL; SSA; SSC; SSE; SSH; SSL; SSN; SST; STP; TCS; TCU; TDI; TFS; THC; TLS; TRW; TTL; TVs; TWA; Tam; Tao; Tay; UMP; USF; USO; USPS; WAP; WS; WSU; bhp; bop; cusp; ms; msg; ops; pep; rep; taps; tau; tee; wasp; ASN; CBP; CEP; CFP; CLP; CSD; CSG; CSO; CSV; CTP; DSA; DSB; DSE; ESB; ESD; ESO; ESR; ESS; ETSI; FIP; FLP; FSH; FSI; FSK; FSM; GRP; HSE; HSL; HSS; IAP; IEP; IFP; IPP; JSC; KSC; LMP; LSA; LSC; LSI; LSM; LSO; MSI; NEP; NTP; ORP; OSB; OSF; PFP; PKP; PSB; PSE; PSF; PSG; PSM; PSO; PSS; PST; RCP; RSI; RSM; RSV; SLP; SMP; SPF; SSM; SSO; SSW; TBI; TCA; TCM; TCR; TLD; TMZ; TNG; TOC; TPA; TPC; TPM; TRC; TUC; UUP; exp; ftp; gasp; imp; mop; nap; pip; pts; pup; sf; sip; sup; tai; tat; temp; tot; tusk; DMP; DSD; DSR; DTP; EDP; ESE; GLP; HSA; HTS; IBP; KSS; KTP; KVP; LPP; LSB; LTS; MDP; MIP; MNP; RSVP; RSX; SGP; TBA; TBC; TDD; TLR; TTA; TTY; USG; UTSA; Usk; WSW; cert; fps; kip; lisp; nip; pap; rasp; tac; tum; typo; wisp; CSH; DSPs; DVP; DWP; ESN; ESOP; OAP; TCO; TEF; TPL; TPN; TTF; TWX; WSJ; alp; bps; cess; fop; hep; opp; sop; sty; tad; tut; zap; TBD; TESL; Tass; Tue; WNP; app; hap; tamp; taw; tope; yip; yup; asps; gyp; hasp; tod; tosh; tush; yap; yep; ATP; CDP; IP; NDP; PS; TD; Tim; USC; USS; espy; op; 's; 1st; A&P; AAP; ABP; ACP; AEP; AGP; AIP; AJP; AKP; ALP; AMP; ANP; AOP; AOSP; AP; APP; AQP; ASAP; ASC; ASE; ASF; ASG; ASH; ASJ; ASK; ASL; ASM; ASMP; ASPA; ASPI; ASPR; ASQ; ASR; ASS; AST; ASU; ASV; ASVP; ASW; ASX; ASY; ASZ; AUP; AVP; AWP; AXP; AYP; Asa; Ash; BAP; BBP; BCP; BDP; BEP; BFP; BGP; BHP; BJP; BKP; BLP; BOP; BP; BPP; BQP; BRP; BS; BSB; BSC; BSE; BSF; BSG; BSH; BSI; BSK; BSL; BSM; BSN; BSO; BSQ; BSR; BSS; BST; BSU; BSV; BSW; BSX; BSc; BTP; BTS; BUP; BVP; BWP; BZP; Bs; CCSP; CHP; CIP; CISP; CMP; CNP; COP; CP; CQP; CRP; CS; CSE; CSM; CSPS; CTSA; CTSO; CTs; CUP; CVP; CWP; CXP; CYP; CZP; CoP; Cs; DAP; DBP; DCP; DDSP; DEP; DFP; DGP; DHP; DIP; DKP; DLP; DNP; DOP; DP; DRP; DS; DSF; DSG; DSI; DSK; DSN; DSQ; DSU; DSV; Ds; E&P; EAP; EBP; ECP; EEP; EGP; EIP; EJP; ELP; EMP; ENP; EP; ERP; ES; ES5; ES6; ESF; ESG; ESH; ESI; ESM; ESPE; ESTP; ESV; ESY; ETP; ETS; ETs; EWP; Es; Esc; Esh; Esk; Etsy; FAP; FCP; FEP; FFP; FFSP; FMP; FOP; FPP; FRP; FS; FSB; FSC; FSD; FSE; FSF; FSG; FSN; FSR; FSS; FST; FSW; FTP; FUP; Fs; GAP; GCP; GIP; GKP; GMP; GP; GPP; GSA; GSC; GSE; GSF; GSFP; GSH; GSI; GSK; GSL; GSM; GSO; GSPR; GSR; GST; GSW; GTP; GTS; GTs; GWP; HAP; HBP; HIP; HLP; HMP; HS; HSC; HSF; HSM; HSRP; HSV; HTP; HTTP; Hs; Hsu; I3P; IDP; IGP; IHP; ILP; IMP; INP; INSP; IOP; IRP; IS; ISA; ISB; ISC; ISD; ISEP; ISF; ISG; ISI; ISIP; ISK; ISL; ISM; ISN; ISO; ISPS; ISPs; ISR; ISS; IST; ISU; ISV; ITP; ITS; ITSM; Isa; Isl; JAP; JCP; JMP; JPP; JS; JS2; JSB; JSF; JSL; JSU; JSX; JTMP; Jap; KDP; KMSP; KOP; KS; KSA; KSM; KSR; KTS; Ks; LBP; LCP; LEP; LFP; LISP; LLP; LP; LRP; LS; LS1; LS2; LS3; LS4; LSE; LSF; LSJ; LSL; LSN; LSQ; LSW; LSX; LTRP; MAP; MBP; MEP; MFP; MHP; MKP; MLP; MOP; MP; MS; MSA; MSB; MSC; MSD; MSE; MSH; MSK; MSM; MSO; MSPs; MSR; MSRP; MSS; MSU; MTP; MUP; Ms; NAP; NCP; NJP; NP; NPP; NRP; NS; NSB; NSC; NSM; NSS; NST; NSU; NTS; NVP; Nip; Np; OCP; ODP; OEP; OLP; OMP; ONP; OOP; OS; OSA; OSAP; OSC; OSCP; OSD; OSG; OSL; OSM; OSMP; OSPF; OSQ; OSR; OSS; OST; OSV; OSX; OSs; OTP; OTs; OVP; P; P&P; P2P; PAP; PEP; PGP; PHP; PIP; PLP; PMP; POP; PP; PQP; PRP; PS1; PSC; PSK; PSN; PSQ; PSR; PSX; PTP; PTSI; PUP; PVP; QFP; QSE; QSR; QSV; RAP; RDP; REP; RFP; RGP; RHP; RIP; RP; RPP; RRP; RS; RS7; RSE; RSF; RSH; RSO; RSR; RST; RSU; RSW; RTP; RTs; RUP; Rs; Rs.; S; S&P; SA; SAP; SC; SCP; SDP; SE; SEP; SF; SFP; SH; SHP; SI; SIP; SJP; SM; SN; SO; SOP; SP1; SPA; SPB; SPC; SPE; SPG; SPH; SPI; SPM; SPP; SPR; SPS; SPT; SPV; SPW; SQP; SRP; SS; SS7; SSAP; SSB; SSD; SSF; SSG; SSI; SSK; SSPI; SSS; SSV; ST; STS; SU; SV; SW; SY; SZ; Sa; Sb; Sc; Se; Sep; Sg; Si; Sm; Sn; Spa; Sr; Su; T; T&C; T&S; T10; T11; T12; T13; T14; T15; T16; T17; T18; T19; T20; T21; T28; T30; T37; T38; T40; T50; T7J; T99; TA; TAA; TAC; TAD; TAE; TAF; TAG; TAH; TAI; TAJ; TAM; TAN; TAO; TAPI; TASS; TAT; TBF; TBH; TBJ; TBK; TBL; TBM; TBT; TBW; TC; TCC; TCD; TCF; TCG; TCH; TCI; TCK; TCL; TCN; TCV; TCW; TDA; TDC; TDE; TDF; TDG; TDM; TDPS; TDR; TDS; TDSB; TDT; TEB; TEC; TED; TEE; TEI; TEM; TEQ; TER; TES; TESS; TEU; TEV; TF; TFA; TFB; TFC; TFE; TFF; TFK; TFL; TFR; TFT; TFTP; TG; TGA; TGB; TGD; TGE; TGF; TGI; TGL; TGN; TGS; TGU; TGV; TGW; TGX; TGZ; TH; THA; THB; THD; THF; THM; THS; THT; THX; THz; TI; TIC; TID; TIF; TIG; TIPE; TIPP; TIS; TIV; TJ; TJC; TJJ; TJK; TJS; TK; TKD; TKK; TKL; TKM; TKO; TKS; TKT; TL; TLA; TLB; TLE; TLF; TLH; TLM; TLN; TLSs; TLT; TLV; TMA; TMB; TMC; TMD; TME; TMG; TMI; TMJ; TMN; TMS; TMT; TMV; TMX; TN; TNB; TNC; TND; TNE; TNF; TNK; TNL; TNM; TNN; TNO; TNR; TNS; TNW; TO; TOB; TOE; TOF; TOG; TOK; TOM; TOR; TOS; TOT; TPE; TPF; TPG; TPI; TPJ; TPO; TPR; TPS; TPT; TPV; TPX; TQ; TQC; TQM; TQS; TR; TRE; TRI; TRIP; TRL; TRM; TRS; TRT; TRX; TRY; TSAF; TSIC; TSLA; TSMA; TTD; TTG; TTI; TTO; TTR; TTS; TTT; TTU; TTX; TTs; TU; TUA; TUB; TUG; TUI; TUN; TUV; TV7; TV8; TVA; TVH; TVM; TVO; TVQ; TVS; TVU; TW; TWC; TWD; TWE; TWF; TWS; TWU; TWV; TWs; TX; TXK; TXL; TXT; TY; TYC; TYO; TZ; TZA; TZC; TZN; TZS; Ta; Taf; Tai; Taj; Tal; Tapu; Tash; Tb; Tc; Te; TeX; Tel; Tew; Tex; Tey; Th; The; Thu; Ti; TiB; Tm; ToC; ToS; Toi; Tom; Tor; Tre; Tsai; Tswa; Tupi; Tur; Tux; Two; Ty; Tzu; UAP; UCP; UFP; UIP; UP; UPP; US; USD; USE; USI; USJ; USN; USPU; USR; UTEP; UTP; UWP; Up; VAP; VCP; VHP; VMP; VOP; VPP; VRP; VS; VSB; VSC; VSD; VSF; VSG; VSL; VSM; VSN; VSOP; VSR; VSS; VST; VSV; VTP; VTs; WEP; WFP; WIP; WP; WPP; WSA; WSB; WSC; WSD; WSF; WSL; WSM; WSN; WSS; WST; WTP; XAP; XMP; XP; XSN; XSS; XTP; YP; Ys; ZAP; ZEP; ZIP; ZMP; ZNP; ZPP; ZSE; ZSL; ZUP; Zs; ap; asap; ass; bap; cps; cts; dap; dep; est; fs; gsm; hosp; hp; ise; ish; isl; ism; lop; ls; mp; ns; p; php; pp; rsvp; s; sh; spn; sq; ssh; st; st.; t; tapu; tase; tass; tec; tgz; tic; tif; tit; tog; tom; tor; tos; tov; tox; tr; tu; tun; ÉTP; ESPN; I2P; NXP; PS3; PS4; PS5; TOTP; TPU; TSMC; XSD; XSL
+...atoes     - 6 tbsp tomato purée     - 2 tsp dried oregano     - olive oil     - sal...
+                                           ^^^
+
+6
+Offset 608, length 6, Rule ID: UPPERCASE_SENTENCE_START
+Message: This sentence does not start with an uppercase letter.
+Suggestion: Method
+...- basil     - whatever else you'd like! method:   - In a large mixing bowl mix the yea...
+                                           ^^^^^^
+
+7
+Offset 835, length 3, Rule ID: HYPHEN_TO_EN
+Message: If specifying a range, consider using an en dash instead of a hyphen.
+Suggestion: 7–8
+...he morning and leave somewhere warm for 7-8 hours.   - Two hours before you want to...
+                                           ^^^
+
+8
+Offset 846, length 2, Rule ID: WHITESPACE_RULE
+Message: Possible typo: you repeated a whitespace
+Suggestion:  
+...and leave somewhere warm for 7-8 hours.   - Two hours before you want to eat, add ...
+                                           ^^
+
+9
+Offset 1039, length 2, Rule ID: WHITESPACE_RULE
+Message: Possible typo: you repeated a whitespace
+Suggestion:  
+...es (10     if you've got a dough hook).   - Leave in a greased bowl for an hour or...
+                                           ^^
+
+10
+Offset 1257, length 2, Rule ID: WHITESPACE_RULE
+Message: Possible typo: you repeated a whitespace
+Suggestion:  
+... crack) ready to be shaped into pizzas.   - To make the sauce, put the oil, garlic...
+                                           ^^
+
+11
+Offset 1440, length 4, Rule ID: WHITESPACE_RULE
+Message: Possible typo: you repeated a whitespace
+Suggestion:  
+...tes and the     onions are translucent.     Add the tinned tomatoes and cook until a...
+                                           ^^^^
+
+12
+Offset 1583, length 2, Rule ID: WHITESPACE_RULE
+Message: Possible typo: you repeated a whitespace
+Suggestion:  
+...ok until it starts to catch on the pan.   - Preheat the oven to as hot as it will ...
+                                           ^^
+
+13
+Offset 1646, length 2, Rule ID: WHITESPACE_RULE
+Message: Possible typo: you repeated a whitespace
+Suggestion:  
+... as hot as it will go (at least 220˚C).   - Stretch the dough to fit a large tray ...
+                                           ^^
+
+14
+Offset 1915, length 4, Rule ID: UPPERCASE_SENTENCE_START
+Message: This sentence does not start with an uppercase letter.
+Suggestion: Tags
+...    bubble and the crusts are browning. tags:   - source:   name: Not sure   book:  ...
+                                           ^^^^
+
+Pizzas

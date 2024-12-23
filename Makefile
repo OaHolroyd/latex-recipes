@@ -72,7 +72,7 @@ $(TMP_DIR)/%.tex: $(TMP_DIR)/%.checked.yaml $(STY_DIR)/$(STY_FILE) | $(TMP_DIR)
 
 # spell and grammar check a YAML recipe definition
 $(TMP_DIR)/%.checked.yaml: $(YAML_DIR)/%.yaml | $(TMP_DIR)
-	@printf "`tput bold``tput setaf 15`Checking %s`tput sgr0`\n" $@
+	@printf "`tput bold``tput setaf 15`Checking %s`tput sgr0`\n" $<
 	$(CHECK_YAML) $< $@
 
 # create output directory for PDFs

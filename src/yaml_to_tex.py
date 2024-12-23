@@ -12,26 +12,6 @@ from jinja2 import Environment, FileSystemLoader
 TEMPLATE_FILE="src/recipe.j2"
 
 
-class ansicolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKCYAN = '\033[96m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-
-
-def stderr_print(*args, **kwargs):
-    print(*args, **kwargs, file=stderr)
-
-
-def warn(text: str, *args, **kwargs):
-    stderr_print(ansicolors.WARNING + text + ansicolors.ENDC, *args, **kwargs)
-
-
 # define non-LaTeX friendly characters and their replacements
 BAD_CHARS = {
     "é": "\\'{e}",
@@ -42,6 +22,7 @@ BAD_CHARS = {
     "⅔": "\\sfrac{2}{3}",
     "¼": "\\sfrac{1}{4}",
     "¾": "\\sfrac{3}{4}",
+    "–": "---",
 }
 
 
