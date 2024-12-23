@@ -16,3 +16,9 @@ To generate PDFs for all of the YAML files in the `yaml` directory, simply run
 ```bash
 make -j
 ```
+
+By default this uses `rcp-phone.sty`, producing PDFs designed to be displayed on smaller devices. To select a different style, override `STY_FILE`, eg
+```bash
+make -j STY_FILE=rcp-parallel.sty
+```
+Available style files can be found in `src/styles`.
