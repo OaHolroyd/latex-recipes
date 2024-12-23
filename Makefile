@@ -4,10 +4,12 @@ STY_FILE?=rcp-phone.sty
 # where the YAML recipes are defined
 YAML_DIR=./yaml
 
+# checking tool
+CHECKER=language_tool
 
 
 # executables
-CHECK_YAML=python3 ./src/check_yaml.py
+CHECK_YAML=python3 ./src/check_yaml.py --mode=$(CHECKER)
 YAML_TO_TEX=python3 ./src/yaml_to_tex.py
 LATEXMK=latexmk -pdf -ps- -dvi- -xdv- -interaction=nonstopmode -halt-on-error
 

@@ -7,16 +7,23 @@ from pathlib import Path
 
 import yaml
 import language_tool_python
+from enchant.checker import SpellChecker
+from enchant import DictWithPWL
+
+
+class DummyMatch(object):
+    def __init__(self, msg):
+        self.message = msg
 
 
 def match_str(match):
-    ruleId = match.ruleId
-    s = ''
-    if match.message:
-        s += 'Error: {}\n'.format(match.message)
-    s += '{}\n{}\n'.format(
-        match.context, ' ' * match.offsetInContext + '^' * match.errorLength
-    )
+    s = 'Error: {}\n'.format(match.message)
+    try:
+        s += '{}\n{}\n'.format(
+            match.context, ' ' * match.offsetInContext + '^' * match.errorLength
+        )
+    except:
+        pass
     return s
 
 
@@ -62,35 +69,66 @@ def flatten_content(content: dict) -> list[str]:
         content_list.append(content["notes"])
     for key, val in content.get("ingredients", {}).items():
         for item in val:
-            content_list.append("Item:" + item)
+            content_list.append("Item:" + str(item))
     for step in content.get("method", []):
         content_list.append(step)
     return content_list
 
 
-def check_text(text: str, tool, words: list[str]) -> list:
+def get_errors_language_tool(content: list[str], words: list[str]) -> list:
     """
-    Uses the provided tool to check the text, printing outputs
+    Use a local LanguageTool server to find spelling and grammar errors in the
+    content.
     """
-    text = str(text)
+    errors = []
+    with language_tool_python.LanguageTool('en-GB') as tool:
+        for item in content:
+            # run LanguageTool on text
+            text = str(item)
+            matches = tool.check(text)
 
-    matches = tool.check(text)
-    match_list = []
-    for i in range(len(matches)):
-        match = matches[i]
+            # custom permitted spellings
+            for i in range(len(matches)):
+                match = matches[i]
 
-        # ignore matches that are spelling 'mistakes' that are in the words list
-        if match.ruleId == "MORFOLOGIK_RULE_EN_GB":
-            bad_word = text[match.offsetInContext:match.offsetInContext+match.errorLength]
-            if bad_word in words:
-                continue
+                # ignore matches that are spelling 'mistakes' that are in the words list
+                if match.ruleId == "MORFOLOGIK_RULE_EN_GB":
+                    bad_word = text[match.offsetInContext:match.offsetInContext+match.errorLength]
+                    if bad_word in words:
+                        continue
 
-        match_list.append(match)
-
-    return match_list
+                errors.append(match)
+    return errors
 
 
-def check_yaml(input_file: str, output_file: str, word_file: str | None = None):
+def get_errors_enchant(content: list[str], words: list[str]) -> list:
+    """
+    Use a Enchant to find spelling errors in the content.
+    """
+    # set up the spell checker
+    d = DictWithPWL("en_GB")
+    for w in words:
+        d.add(w)
+    tool = SpellChecker(d)
+
+    # Merge content into a single string
+    text = " ".join(content)
+
+    # check spelling
+    tool.set_text(text)
+    errors = []
+    for err in tool:
+        errors.append(DummyMatch(f'{err.word} spelled incorrectly'))
+
+    return errors
+
+
+def check_yaml(
+        input_file: str,
+        output_file: str,
+        word_file: str | None = None,
+        mode: str = "language_tool"
+    ):
     """
     Loads a recipe from a YAML file and runs a spell/grammar checker over it.
     """
@@ -107,10 +145,14 @@ def check_yaml(input_file: str, output_file: str, word_file: str | None = None):
     content = flatten_content(yaml.safe_load(text))
 
     # check spelling and grammar
-    errors = []
-    with language_tool_python.LanguageTool('en-GB') as tool:
-        for item in content:
-            errors += check_text(item, tool, words)
+    if mode == "language_tool":
+        errors = get_errors_language_tool(content, words)
+    elif mode == "enchant":
+        errors = get_errors_enchant(content, words)
+    elif mode == "none":
+        errors = []
+    else:
+        raise ValueError(f"mode '{mode}' not recognised")
 
     # report errors
     if len(errors) > 0:
@@ -134,11 +176,15 @@ if __name__ == '__main__':
     # optionally override default additional-word list
     parser.add_argument('--words', type=str, default="src/words.txt", help='additional word list')
 
+    # optionally override default checker
+    parser.add_argument('--mode', type=str, default="language_tool", help='Checking engine')
+
     # get the arguments
     args = parser.parse_args()
     input_file = args.input_file
     output_file = args.output_file
     word_file = args.words
+    mode = args.mode
 
     # generate the TeX file
-    check_yaml(input_file, output_file, word_file=word_file)
+    check_yaml(input_file, output_file, word_file=word_file, mode=mode)
