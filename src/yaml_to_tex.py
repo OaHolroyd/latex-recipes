@@ -7,8 +7,6 @@ from pathlib import Path
 
 import yaml
 from jinja2 import Environment, FileSystemLoader
-from enchant.checker import SpellChecker
-from enchant import DictWithPWL
 
 
 TEMPLATE_FILE="src/recipe.j2"
@@ -34,16 +32,6 @@ def warn(text: str, *args, **kwargs):
     stderr_print(ansicolors.WARNING + text + ansicolors.ENDC, *args, **kwargs)
 
 
-def make_checker(words: list[str]) -> SpellChecker:
-    """
-    Constructs a SpellChecker, adding extra words to its permitted list
-    """
-    d = DictWithPWL("en_GB")
-    for w in words:
-        d.add(w)
-    return SpellChecker(d)
-
-
 # define non-LaTeX friendly characters and their replacements
 BAD_CHARS = {
     "é": "\\'{e}",
@@ -61,8 +49,6 @@ def yaml_to_tex(
     yaml_file: str,
     tex_file: str,
     sty_file: str,
-    nocheck: bool = False,
-    word_file: str | None = None,
 ):
     """
     Generate a YAML file `yaml_file` from a TeX file `tex_file`
@@ -70,32 +56,10 @@ def yaml_to_tex(
     Args:
         yaml_file: relative path to the source YAML file
         tex_file: relative path to the output TeX file
-        tex_file: relative path to the recipe style file
-        nocheck: whether to disable spell-checking
-        word_file: relative path to file containing additional permitted words
-            for the spell-checker
+        sty_file: relative path to the recipe style file
     """
-    # load the recipe from the yaml file
+    # load the recipe from the YAML file
     text = Path(yaml_file).read_text()
-
-    if not nocheck:
-        # read extra words from the file if supplied
-        words = []
-        if word_file is not None:
-            with open(word_file, "r") as f:
-                words = [line.rstrip('\n') for line in f]
-
-        # set up dictionary
-        checker = make_checker(words)
-
-        # check spelling
-        checker.set_text(text.lower())
-        errflag = False
-        for err in checker:
-            if not errflag:
-                errflag = True
-                warn(f"[{yaml_file}] WARNING potential spelling errors")
-            warn(f"  {err.word}")
 
     # get content from the YAML
     content = yaml.safe_load(text)
@@ -129,12 +93,6 @@ if __name__ == '__main__':
     parser.add_argument('yaml_file', type=str, help='input YAML file')
     parser.add_argument('tex_file', type=str, help='output TeX file')
 
-    # optionally check spelling etc.
-    parser.add_argument('--nocheck', action='store_true', help='disable spell checker')
-
-    # optionally override default additional-word list
-    parser.add_argument('--words', type=str, default="src/words.txt", help='additional word list')
-
     # optionally override the style file
     parser.add_argument('--style', type=str, default="rcpphone.sty", help='additional word list')
 
@@ -142,9 +100,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     yaml_file = args.yaml_file
     tex_file = args.tex_file
-    nocheck = args.nocheck
-    word_file = args.words
     sty_file = args.style
 
     # generate the TeX file
-    yaml_to_tex(yaml_file, tex_file, sty_file, nocheck=nocheck, word_file=word_file)
+    yaml_to_tex(yaml_file, tex_file, sty_file)

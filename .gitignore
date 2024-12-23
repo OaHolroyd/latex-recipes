@@ -6,8 +6,8 @@ yaml/*
 !yaml/template.yaml
 !yaml/template-verbose.yaml
 
-# generated LaTeX
-*.tex
+# generated files
+tmp/*
 
 
 # the following is the standard TeX .gitignore:
