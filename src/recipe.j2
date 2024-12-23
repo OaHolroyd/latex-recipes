@@ -11,20 +11,22 @@
 {% if notes -%}{{"\\rcpnotes{%s}" % notes}}{%- endif %}
 
 \begin{ingredients}
-{% for item in ingredients.main %}
-  {{"  \item %s" % item}}
+{% for key, value in main_ingredients.items() %}
+  {% if key != 'main' -%}
+  {{"\sectA{%s}" % key}}
+  {%- endif %}
+  {% for item in value -%}
+    {{"  \item %s" % item}}
+  {% endfor %}
 {% endfor -%}
 
 {% for key, value in ingredients.items() -%}
-  {% if key != 'main' -%}
-    {{"  \sect %s" % key}}
-    {% for item in value -%}
-      {{"  \item %s" % item}}
-    {% endfor %}
-  {%- endif %}
+  {{"  \sect{%s}" % key}}
+  {% for item in value -%}
+    {{"  \item %s" % item}}
+  {% endfor %}
 {% endfor -%}
 \end{ingredients}
-
 \begin{method}
 {% for item in method %}
   {{"  \item %s" % item}}

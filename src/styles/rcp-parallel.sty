@@ -1,92 +1,99 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{rcp-phone}[2020/09/06 Recipe layout for phones]
+\ProvidesPackage{rcp-parallel}[2020/09/06 Basic recipe layout]
 
+\RequirePackage{mfirstuc} % to allow first letter capitalising
 \RequirePackage{enumitem} % to allow no bullet itemization
+\RequirePackage{longtable} %dependency of longtabu
+\RequirePackage{tabu} % to allow lines after rows
 \RequirePackage{multicol} % to allow multipl columns
+\RequirePackage{xparse} % to allow fancy things like the single multicol
+\RequirePackage{bbding} % for snowflake
+\RequirePackage{graphicx} % to include images
 \RequirePackage{url} % to include urls
+\RequirePackage{subfiles} % to allow each recipe to be in its own file
 \makeatletter
 \g@addto@macro{\UrlBreaks}{\UrlOrds}
 \makeatother
 
 \RequirePackage{gensymb} % to use the degree symbol
 \RequirePackage{xfrac} % for split level fractions
+\RequirePackage{booktabs} % for midrule
 \RequirePackage{titlecaps} % for title
 \RequirePackage{scrextend} % for better font size control
-
 
 % ********
 % GEOMETRY
 % ********
 % define page setup etc
 \RequirePackage{geometry}
-\geometry{twoside}
-\geometry{paperwidth=300pt}
-
-% set pages to as long as required
-\RequirePackage[active,tightpage]{preview}
-\renewcommand{\PreviewBorder}{1cm}
-\newcommand{\Newpage}{\end{preview}\begin{preview}}
+\geometry{a4paper}
+\geometry{margin=2cm}
 
 \setlength{\parindent}{0pt}
-\changefontsizes{11pt}
+\changefontsizes{12pt}
 
-% sans-serif font
-\RequirePackage[default]{lato}
+\pagenumbering{gobble}
 
-% ignore some words in cap. titles
+% ignore somw words in cap. titles
 \Addlcwords{are or etc and in}
 
 
 % ********
 % COMMANDS
 % ********
-\newcommand{\rcptitle}[1]{{\Large \bfseries\textbf{\titlecap{#1}}}\vspace{1em}}
+
+\newcommand{\rcptitle}[1]{{\huge \textsc{\titlecap{#1}}}\vspace{1em}}
 \newcommand{\rcpfreezable}{\textbf{Freezable}\\}
 \newcommand{\rcpservings}[1]{\textbf{Serves:} #1\\}
 \newcommand{\rcpmakes}[1]{\textbf{Makes:} #1\\}
 \newcommand{\rcpprep}[1]{\textbf{Prep:} #1\\}
 \newcommand{\rcpcook}[1]{\textbf{Cook:} #1\\}
 \newcommand{\rcpnotes}[1]{#1\\}
-\newcommand{\rcpauthor}[1]{(#1)}
-\newcommand{\rcpbook}[2]{(#1, \textit{#2})}
-\newcommand{\rcpwebsite}[2]{(#1, \url{#2})}
-\newcommand{\rcpopen}{\begin{preview}}
-\newcommand{\rcpclose}{\vspace{2em}\end{preview}}
+\newcommand{\rcpauthor}[1]{\vfill(#1)}
+\newcommand{\rcpbook}[2]{\vfill(#1, \textit{#2})}
+\newcommand{\rcpwebsite}[2]{\vfill(#1, \url{#2})}
+\newcommand{\rcpopen}{}
+\newcommand{\rcpclose}{\newpage}
 \newcommand{\numcols}{1}
 
 
 % ************
 % ENVIRONMENTS
 % ************
-% ingredient list with optional title
-\newenvironment{ingredients}[1][\vspace{-1.0em}]
-{
-  \bfseries\vspace{0.5em}\textit{#1}\vspace{-2.5em}\\
-  \begin{itemize}[label={},leftmargin=0pt]
-    \setlength{\itemsep}{-1.1em}
-    \let\olditem\item
 
-    \newcommand{\sectA}{\olditem\normalfont\bfseries}
-    \newcommand{\sect}{\olditem\vskip1.5em\normalfont\bfseries}
-    \renewcommand{\item}{\olditem \hrulefill\\\vskip-1.79em\bfseries\itshape}
+% ingredient list with optional title
+\newenvironment{ingredients}
+{
+  \bfseries
+  \begin{minipage}[t]{0.33\linewidth}
+  \begin{flushleft}
+  \small
+  \begin{itemize}[label={},leftmargin=10pt,itemindent=-10pt]
+  \let\olditem\item
+
+  \newcommand{\sectA}{\olditem\normalfont\scshape}
+  \newcommand{\sect}{\olditem\vskip1em\normalfont\scshape}
+  \renewcommand{\item}{\olditem\normalfont\bfseries}
 }
 {
-  \vskip0.3em\hrule
   \end{itemize}
+  \end{flushleft}
+  \end{minipage}%
 }
 
 % method list
 \newenvironment{method}
 {
-  \vspace{0.0em}
+  \begin{minipage}[t]{0.66\linewidth}
+  \vskip0pt
   \begin{itemize}[label={},leftmargin=0pt]
     \setlength{\itemsep}{0.5em}
     \setlength{\itemindent}{0em}
 }
 {
   \end{itemize}
+  \end{minipage}
 }
-
 
 
 % Permit multicols to have a single column

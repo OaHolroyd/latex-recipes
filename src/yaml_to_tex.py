@@ -97,9 +97,16 @@ def yaml_to_tex(
                 warn(f"[{yaml_file}] WARNING potential spelling errors")
             warn(f"  {err.word}")
 
-    # fill in the recipe template
+    # get content from the YAML
     content = yaml.safe_load(text)
     content["style"] = sty_file[:-4]
+
+    # extract the primary ingredient list
+    main_key = list(content["ingredients"].keys())[0]
+    content["main_ingredients"] = {main_key: content["ingredients"][main_key]}
+    content["ingredients"].pop(main_key, None)
+
+    # fill in the recipe template
     env = Environment(loader=FileSystemLoader(searchpath="./"))
     template = env.get_template(TEMPLATE_FILE)
     latex = template.render(**content) + '\n'

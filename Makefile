@@ -1,5 +1,5 @@
 # which style file to use (located in STY_DIR)
-STY_FILE=rcp-phone.sty
+STY_FILE=rcp-parallel.sty
 
 # where the YAML recipes are defined
 YAML_DIR=./yaml
